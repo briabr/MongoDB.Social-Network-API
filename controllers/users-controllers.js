@@ -37,7 +37,7 @@ const usersController = {
         // return if no user is found 
         .then(dbUsersData => {
             if(!dbUsersData) {
-                res.status(404).json({message: ' there is no User with thst ID!'});
+                res.status(404).json({message: ' there is no User with this ID!'});
                 return; 
             }
             res.json(dbUsersData)
@@ -47,7 +47,10 @@ const usersController = {
             res.status(400).json(err)
         })
     },
+
+
 };
+
 
 // Export module users controller
 module.exports = usersController; 

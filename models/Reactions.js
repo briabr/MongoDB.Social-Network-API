@@ -23,8 +23,15 @@ const ReactionsSchema = new Schema(
         get: (createdAtVal) => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm a')
     }
     },
-    {
+    
     // Mongoose supports two Schema options to transform Objects after querying MongoDb: toJSON and toObject.
     // Here we are indicating that we want virtuals to be included with our response, overriding the default behavior
+    {
+        toJSON: {
+            getters: true
+        },
+        id: false
+    }
     
 );
+

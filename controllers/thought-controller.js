@@ -36,8 +36,8 @@ const thoughtsController = {
     },
 
     // Get a certain thought by ID
-    getThoughtsById({params}, res) {
-        Thoughts.findOne({ _id: params.id })
+    getThoughtsById(req, res) {
+        Thoughts.findOne({_id: req.params.id })
         .populate({path: 'reactions',select: '-__v'})
         .select('-__v')
         .then(dbThoughtsData => {
