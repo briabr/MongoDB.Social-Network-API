@@ -54,6 +54,9 @@ In addition to this, your walkthrough video should show the POST and DELETE rout
 
 ## Walkthrough Video 
 Users: 
+
 chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e03a8eb4-2722-4faf-y448-01230e076d28
+
 Thoughts:
+
 chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/f2f83818-023e-4893-yba3-f19cffc6ccf2

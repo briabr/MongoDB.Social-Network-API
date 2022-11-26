@@ -21,7 +21,12 @@ router
     .get(getThoughtsById)
     .delete(deleteThoughts)
     .put(updateThoughts)
-
+    
+// // /api/thoughts/:userId 
+// router
+// .route('/:thoughtId/reactions')
+// .post(addReaction)
+// .delete(deleteReaction)
 
 // Export module router
 module.exports = router;
