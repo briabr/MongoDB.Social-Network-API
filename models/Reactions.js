@@ -32,6 +32,5 @@ const ReactionsSchema = new Schema(
         },
         id: false
     }
-    
 );
 
