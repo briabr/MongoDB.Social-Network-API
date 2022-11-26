@@ -40,7 +40,7 @@ const thoughtsController = {
         .select('-__v')
         .then(dbThoughtsData => {
             if(!dbThoughtsData) {
-            res.status(404).json({message: 'There are no thoughts with this ID!'});
+            res.status(404).json({message: 'There is no thought with this ID!'});
             return;
         }
         res.json(dbThoughtsData)
@@ -56,7 +56,7 @@ const thoughtsController = {
         Thoughts.findOneAndDelete({ _id: params.id })
         .then(dbThoughtData => {
             if (!dbThoughtData) {
-                res.status(400).json({ message: 'There are no thought with this id!'});
+                res.status(400).json({ message: 'There is no thought with this id!'});
                 return;
             }
             res.json(dbThoughtData);
@@ -68,13 +68,42 @@ const thoughtsController = {
         Thoughts.findOneAndUpdate({ _id: params.id}, body, {new: true })
         .then(dbThoughtData => {
             if (!dbThoughtData) {
-                res.status(400).json({ message: 'There are no thoughts with this id!'});
+                res.status(400).json({ message: 'There is no thoughts with this id!'});
                 return;
             }
             res.json(dbThoughtData)
         })
         .catch(err => res.status(400).json(err));
     },
+    // Add a  Reaction
+    addReaction({params, body}, res) {
+        Thoughts.findOneAndUpdate({_id: params.thoughtId}, {$push: {reactions: body}}, {new: true, runValidators: true})
+        .populate({path: 'reactions', select: '-__v'})
+        .select('-__v')
+        .then(dbThoughtsData => {
+        if (!dbThoughtsData) {
+            res.status(404).json({message: 'There aisre no thought with this id!'});
+            return;
+        }
+        res.json(dbThoughtsData);
+        })
+        .catch(err => res.status(400).json(err))
+
+    },
+
+    // Delete a reaction by ID
+    deleteReaction(req, res) {
+        Thoughts.findOneAndUpdate({_id: req.params.thoughtId}, {$pull: {reactions: {reactionId: req.params.reactionId}}}, {new : true})
+        .then(dbThoughtsData => {
+            if (!dbThoughtsData) {
+                res.status(404).json({message: 'There is no thought with this id!'});
+                return;
+            }
+            res.json(dbThoughtsData);
+        })
+        .catch(err => res.status(400).json(err));
+    }
+
 
 };
 // Export module thought controller
