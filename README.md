@@ -60,3 +60,9 @@ chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e03a8eb4-272
 Thoughts:
 
 chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/f2f83818-023e-4893-yba3-f19cffc6ccf2
+
+Thoughts and Reactions:
+
+
+Friends:
+
