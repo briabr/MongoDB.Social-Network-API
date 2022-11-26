@@ -53,3 +53,6 @@ The following animation shows the POST and DELETE routes for a user’s friend l
 In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
 
 ## Walkthrough Video 
+Users: 
+
+chrome-extension://mmeijimgabbpbgpdklnllpncmdofkcpn/app.html#/files/e03a8eb4-2722-4faf-y448-01230e076d28

@@ -1,7 +1,6 @@
 const {Thoughts, Users} = require('../models');
 
 // Set up Thoughts Controller
-
 const thoughtsController = {
     createThoughts(req, res) {
         Thoughts.create(body)
@@ -15,7 +14,7 @@ const thoughtsController = {
           })
           .then(dbThoughtsData => {
             if(!dbThoughtsData) {
-                res.status(404).json({message: 'there are no thoughts with this ID!'});
+                res.status(404).json({message: 'There are no thoughts with this ID!'});
                 return;
             }
             res.json(dbThoughtsData)
@@ -23,7 +22,7 @@ const thoughtsController = {
         .catch(err => res.json(err)); 
     },
 
-    // Get all available Thoughts
+    // Get all  Thoughts
     getAllThoughts(req,res) {
         Thoughts.find({})
         .populate({path: 'reactions', select: '-__v'})
@@ -35,14 +34,14 @@ const thoughtsController = {
         });
     },
 
-    // Get a certain thought by ID
+    // Get a single thought by ID
     getThoughtsById(req, res) {
         Thoughts.findOne({_id: req.params.id })
         .populate({path: 'reactions',select: '-__v'})
         .select('-__v')
         .then(dbThoughtsData => {
             if(!dbThoughtsData) {
-            res.status(404).json({message: 'there are no thoughts with this  ID!'});
+            res.status(404).json({message: 'There are no thoughts with this ID!'});
             return;
         }
         res.json(dbThoughtsData)
@@ -54,6 +53,5 @@ const thoughtsController = {
     },
 
 };
-
 // Export module thought controller
 module.exports = thoughtsController;

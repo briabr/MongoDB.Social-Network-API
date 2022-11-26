@@ -37,7 +37,7 @@ const usersController = {
         // return if no user is found 
         .then(dbUsersData => {
             if(!dbUsersData) {
-                res.status(404).json({message: 'There is no User with this ID!'});
+                res.status(404).json({message: 'there is no User with this ID!'});
                 return; 
             }
             res.json(dbUsersData)
@@ -61,8 +61,8 @@ const usersController = {
     },
 
     // update user
-    updateUsers(req, res) {
-        Users.findOneAndUpdate({_id: req.params.id}, body, {new: true, runValidators: true})
+    updateUsers({params, body}, res) {
+        Users.findOneAndUpdate({_id: params.id}, body, {new: true})
         .then(dbUsersData => {
             if(!dbUsersData) {
                 res.status(404).json({message: 'There is no User with this ID!'});
@@ -72,8 +72,8 @@ const usersController = {
         })
         .catch(err => res.json(err))
     },
+
     
 };
-
 // Export module users controller
 module.exports = usersController; 
