@@ -10,15 +10,18 @@ const {
 } = require('../../controllers/thought-controller');
 
 // /api/thoughts 
-router.route('/').get(getAllThoughts);
+router
+      .route('/')
+      .get(getAllThoughts)
+      .post(createThoughts)
 
 // /api/thoughts/:id 
-router.route('/:id')
-      .get(getThoughtsById)
+router
+    .route('/:id')
+    .get(getThoughtsById)
+    .delete(deleteThoughts)
+    .put(updateThoughts)
 
-// /api/thoughts/:userId 
-router.route('/:userId')
-      .post(createThoughts);
 
 // Export module router
 module.exports = router;
