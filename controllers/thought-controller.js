@@ -52,8 +52,8 @@ const thoughtsController = {
     },
 
     // delete thought
-    deleteThoughts ({ params }, res) { 
-        Thoughts.findOneAndDelete({ _id: params.id })
+    deleteThoughts (req, res) { 
+        Thoughts.findOneAndDelete({ _id: req.params.id })
         .then(dbThoughtData => {
             if (!dbThoughtData) {
                 res.status(400).json({ message: 'There is no thought with this id!'});
@@ -82,7 +82,7 @@ const thoughtsController = {
         .select('-__v')
         .then(dbThoughtsData => {
         if (!dbThoughtsData) {
-            res.status(404).json({message: 'There aisre no thought with this id!'});
+            res.status(404).json({message: 'There is no thought with this id!'});
             return;
         }
         res.json(dbThoughtsData);
@@ -92,10 +92,10 @@ const thoughtsController = {
     },
 
     // Delete a reaction by ID
-  removeReaction({ params }, res) {
+  removeReaction(req, res) {
     Thoughts.findOneAndUpdate(
-      { _id: params.thoughtId },
-      { $pull: { reactions: { reactionId: params.reactionId } } },
+      { _id: req.params.thoughtId },
+      { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { new: true }
     )
       .then((dbThoughtData) => res.json(dbThoughtData))

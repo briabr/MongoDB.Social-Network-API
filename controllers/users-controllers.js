@@ -27,7 +27,6 @@ const usersController = {
         });
     },
     
-
     // Get single user by ID
     getUsersById(req, res) {
         Users.findOne({_id: req.params.id })

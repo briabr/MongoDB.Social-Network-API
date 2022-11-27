@@ -52,6 +52,9 @@ The following animation shows the POST and DELETE routes for a user’s friend l
 
 In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
 
+## GitHub Repo
+https://github.com/briabr/NoSQL.Social-Network-API
+
 ## Walkthrough Video 
 Users: 
 
