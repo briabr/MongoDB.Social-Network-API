@@ -62,8 +62,6 @@ https://drive.google.com/file/d/1D4_7v771B9Zc1BARMooU7tNeDWVh-j3u/view
 
 Thoughts:
 
-https://drive.google.com/file/d/1iYYYZGconDLjdKoei0y8RLfq_YORqFS7/view
-
 Reactions:
 
 https://drive.google.com/file/d/19OX88kbwChw00jmUyZqNWhGL-eLVE1MH/view
